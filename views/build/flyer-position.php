@@ -26,7 +26,7 @@
     <div class="uk-margin-medium uk-card uk-animation-slide-bottom <?= $widget->theme['card_style'] ?>">
       <?php if ($widget->theme['flyer_image']): ?>
         <div class="uk-card-media-top" <?php if (!$widget->theme['content_disabled']): ?>uk-tooltip="DETAILS"<?php endif; ?>>
-          <?php if (!$widget->theme['content_disabled']): ?><a href="<?= $widget->theme['flyer_link'] ?>" uk-toggle><?php endif; ?>
+          <?php if (!$widget->theme['content_disabled']): ?><a href="#flyer<?= $widget->id ?>" uk-toggle><?php endif; ?>
             <img data-src="<?= $widget->theme['flyer_image'] ?>" data-width="1240" data-heigth="1754" uk-img>
           <?php if (!$widget->theme['content_disabled']): ?></a><?php endif; ?>
         </div>
@@ -39,7 +39,7 @@
         <?php endif; ?>
         <?= $widget->get('result') ?>
         <?php if ($widget->theme['popup'] && !$widget->theme['content_disabled']): ?>
-          <div id="f1" class="uk-flex-top" uk-modal>
+          <div id="flyer<?= $widget->id ?>" class="uk-flex-top" uk-modal>
             <div class="uk-modal-dialog uk-margin-auto-vertical">
               <button class="uk-modal-close-default" type="button" uk-close></button>
               <div class="uk-modal-header">
