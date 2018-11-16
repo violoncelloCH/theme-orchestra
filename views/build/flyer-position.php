@@ -49,7 +49,7 @@
                 <?= $widget->theme['popup'] ?>
               </div>
               <div class="uk-modal-footer">
-                <a class="uk-button uk-button-default" href="" target="_blank">Flyer als PDF</a>
+                <a class="uk-button uk-button-default" href="<?= $widget->theme['flyer_link'] ?>" target="_blank">Flyer als PDF</a>
               </div>
             </div>
           </div>

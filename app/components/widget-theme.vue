@@ -13,15 +13,15 @@
             </div>
           </div>
           <div class="uk-form-row">
-              <label class="uk-form-label" for="form-h-it">Image link</label>
-              <div class="uk-form-controls">
-                  <input class="uk-width-1-2" v-model="widget.theme.flyer_link" type="text">
-              </div>
-          </div>
-          <div class="uk-form-row">
             <label class="uk-form-label" for="form-h-it">Popup content</label>
             <div class="uk-form-controls">
               <v-editor :value.sync="widget.theme.popup" :options="{markdown : false}"></v-editor>
+            </div>
+          </div>
+          <div class="uk-form-row">
+            <label class="uk-form-label" for="form-h-it">Link to Flyer or PDF</label>
+            <div class="uk-form-controls">
+              <input class="uk-width-1-2" v-model="widget.theme.flyer_link" type="text">
             </div>
           </div>
           <div class="uk-form-row">
@@ -58,7 +58,7 @@
               </select>
             </div>
         </div>
-        <div v-if="widget.position !== 'flyer' && widget.position !== 'flyerarchive' class="uk-form-row">
+        <div v-if="widget.position !== 'flyer' && widget.position !== 'flyerarchive'" class="uk-form-row">
           <label class="uk-form-label" for="form-h-it">Widget background image</label>
           <div class="uk-form-controls">
             <input-image :source.sync="widget.theme.card_image"></input-image>
