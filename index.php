@@ -60,12 +60,14 @@ return [
 
 
     'widget' => [
+      'flyer_image'   => '',
+      'flyer_link'    => '',
+      'popup'         => '',
       'title_hide'    => false,
       'content_disabled' => false,
       'card_style'    => '',
       'card_padding'  => 'uk-card-body',
       'card_image'    => '',
-      'image_link'    => '',
 
     ],
 

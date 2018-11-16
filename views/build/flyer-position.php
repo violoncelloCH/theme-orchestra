@@ -25,10 +25,10 @@
   <div>
     <div class="uk-margin-medium uk-card uk-animation-slide-bottom <?= $widget->theme['card_style'] ?>">
       <?php if ($widget->theme['flyer_image']): ?>
-        <div class="uk-card-media-top" uk-tooltip="DETAILS">
-          <a href="<?= $widget->theme['flyer_link'] ?>" uk-toggle>
+        <div class="uk-card-media-top" <?php if (!$widget->theme['content_disabled']): ?>uk-tooltip="DETAILS"<?php endif; ?>>
+          <?php if (!$widget->theme['content_disabled']): ?><a href="<?= $widget->theme['flyer_link'] ?>" uk-toggle><?php endif; ?>
             <img data-src="<?= $widget->theme['flyer_image'] ?>" data-width="1240" data-heigth="1754" uk-img>
-          </a>
+          <?php if (!$widget->theme['content_disabled']): ?></a><?php endif; ?>
         </div>
       <?php endif; ?>
       <div class="<?= $widget->theme['card_padding'] ?>">
@@ -38,7 +38,23 @@
           </h3>
         <?php endif; ?>
         <?= $widget->get('result') ?>
-        </div>
+        <?php if ($widget->theme['popup'] && !$widget->theme['content_disabled']): ?>
+          <div id="f1" class="uk-flex-top" uk-modal>
+            <div class="uk-modal-dialog uk-margin-auto-vertical">
+              <button class="uk-modal-close-default" type="button" uk-close></button>
+              <div class="uk-modal-header">
+                <h3><?= $widget->title ?></h3>
+              </div>
+              <div class="uk-modal-body" uk-overflow-auto>
+                <?= $widget->theme['popup'] ?>
+              </div>
+              <div class="uk-modal-footer">
+                <a class="uk-button uk-button-default" href="" target="_blank">Flyer als PDF</a>
+              </div>
+            </div>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
+  </div>
 <?php endforeach; ?>
