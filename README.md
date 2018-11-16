@@ -6,6 +6,6 @@ This is a Pagekit theme for the orchestra "Junge Sinfoniker Basel". It is quite 
 This theme uses UIKit 3 with some modifications for it's layout.
 
 ----------
-**version** : 1.0.1
+**version** : 1.0.2
 
 theme_orchestra for [pagekit](https://pagekit.com)
