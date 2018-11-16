@@ -6,8 +6,8 @@
       </div>
     </div>
 
-    <div class="uk-block uk-block-secondary uk-text-center">
-      <h1 class="uk-contrast">Violoncello Theme Settings</h1>
+    <div class="uk-block uk-block-default uk-text-center">
+      <h1>Violoncello Theme Settings</h1>
     </div>
 
     <div class="uk-block uk-block-muted" style="border:1px solid #ede7e7; padding: 10px;">
@@ -15,32 +15,33 @@
         <h3>
           Social Links
         </h3>
+        <p>Social sharing links presented in the footer:<p>
         <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Facebook Url</label>
+            <label class="uk-form-label" for="form-h-it">Facebook url</label>
             <div class="uk-form-controls">
                 <input class="uk-width-medium" v-model="config.facebook" type="url">
             </div>
         </div>
         <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Twitter Url</label>
+            <label class="uk-form-label" for="form-h-it">Twitter url</label>
             <div class="uk-form-controls">
                 <input class="uk-width-medium" v-model="config.twitter" type="url">
             </div>
         </div>
         <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Instagram Url</label>
+            <label class="uk-form-label" for="form-h-it">Instagram url</label>
             <div class="uk-form-controls">
                 <input class="uk-width-medium" v-model="config.instagram" type="url">
             </div>
         </div>
         <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Github Url</label>
+            <label class="uk-form-label" for="form-h-it">Github url</label>
             <div class="uk-form-controls">
                 <input class="uk-width-medium" v-model="config.github" type="url">
             </div>
         </div>
         <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Youtube Url</label>
+            <label class="uk-form-label" for="form-h-it">Youtube url</label>
             <div class="uk-form-controls">
                 <input class="uk-width-medium" v-model="config.youtube" type="url">
             </div>
@@ -49,14 +50,18 @@
         <h3>
           Second Logo
         </h3>
+        <p>
+          The second logo is positioned at the left side of the navigation bar.<br>
+          You can optionally specify a link for the second logo.
+        </p>
         <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Second Logo</label>
+            <label class="uk-form-label" for="form-h-it">Second logo</label>
             <div class="uk-form-controls">
                 <input-image :source.sync="config.second_logo"></input-image>
             </div>
         </div>
         <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Link for Second Logo</label>
+            <label class="uk-form-label" for="form-h-it">Link for second logo</label>
             <div class="uk-form-controls">
                 <input class="uk-width-medium" v-model="config.url_second_logo" type="text">
             </div>

@@ -20,7 +20,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
- 
+
 
 /**
  * Configuration
@@ -45,9 +45,6 @@ return [
     'node' => [
       'title_hide'    => false,
       'remove_margin' => false,
-      'card_style'    => '',
-      'card_image'    => '',
-      'card_padding'  => '',
       'page_image'    => '',
     ],
 
@@ -65,9 +62,10 @@ return [
     'widget' => [
       'title_hide'    => false,
       'card_style'    => '',
-      'image_link'    => '',
+      'card_padding'  => 'uk-card-body',
       'card_image'    => '',
-      'card_padding'  => '',
+      'image_link'    => '',
+
     ],
 
     /**
