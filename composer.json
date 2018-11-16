@@ -1,7 +1,7 @@
 {
     "name": "violoncello/theme-orchestra",
     "type": "pagekit-theme",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Theme Orchestra",
     "description": "Pagekit Theme for Junge Sinfoniker Basel",
     "license": "AGPLv3",
