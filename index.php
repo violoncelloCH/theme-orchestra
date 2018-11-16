@@ -61,6 +61,7 @@ return [
 
     'widget' => [
       'title_hide'    => false,
+      'content_disabled' => false,
       'card_style'    => '',
       'card_padding'  => 'uk-card-body',
       'card_image'    => '',

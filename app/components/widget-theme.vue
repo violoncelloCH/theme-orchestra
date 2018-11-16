@@ -13,6 +13,12 @@
             </div>
         </div>
         <div class="uk-form-row">
+            <label class="uk-form-label" for="form-h-it">Disable content</label>
+            <div class="uk-form-controls">
+              <input class="uk-width-medium" v-model="widget.theme.content_disabled" type="checkbox">
+            </div>
+        </div>
+        <div class="uk-form-row">
             <label class="uk-form-label" for="form-h-it">Card style</label>
             <div class="uk-form-controls">
               <select class="uk-width-1-2" v-model="widget.theme.card_style">

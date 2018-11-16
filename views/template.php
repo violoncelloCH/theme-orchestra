@@ -182,7 +182,7 @@
         <?php if ($view->position()->exists('flyerarchive')): ?>
           <div class="uk-container uk-container-expand">
             <div class="uk-flex-bottom uk-margin-top uk-margin-bottom uk-child-width-1-4@m" uk-grid>
-                <?= $view->position('flyerarchive' , 'build/flyer-position.php') ?>
+                <?= $view->position('flyerarchive' , 'build/flyer-archive-position.php') ?>
             </div>
           </div>
         <?php endif; ?>
