@@ -1,3 +1,4 @@
+<?php
 /**
  * @copyright Copyright (c) 2018, violoncello.ch
  *
@@ -18,7 +19,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
- 
+ ?>
+
 <?php foreach ($widgets as $widget): ?>
   <div>
     <div class="uk-margin-medium uk-card uk-animation-slide-bottom <?= $widget->theme['card_style'] ?>">

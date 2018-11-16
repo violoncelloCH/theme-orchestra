@@ -1,3 +1,4 @@
+<?php
 /**
  * @copyright Copyright (c) 2018, violoncello.ch
  *
@@ -18,7 +19,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
- 
+ ?>
+
 <?php foreach ($widgets as $widget): ?>
     <div class="uk-margin-medium uk-card uk-animation-slide-left <?= $widget->theme['card_style'] ?> uk-background-cover" <?= (!empty($widget->theme['card_image']) ? 'style="min-height:50vh" data-src="'. $widget->theme['card_image'] .'" uk-img':'') ?>>
       <div class="<?= $widget->theme['card_padding'] ?> uk-transition-toggle" tabindex="0">

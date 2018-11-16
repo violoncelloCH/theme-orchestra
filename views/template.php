@@ -1,3 +1,4 @@
+<?php
 /**
  * @copyright Copyright (c) 2018, violoncello.ch
  *
@@ -18,6 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
+ ?>
 
 <!DOCTYPE html>
 <html <?= (!empty($params['page_image']) ? 'class="uk-background uk-background-image uk-background-cover"':'') ?> <?= (!empty($params['page_image']) ? 'style="background-image: url(' . $params['page_image'] . ')"':'') ?> lang="<?= $intl->getLocaleTag() ?>">
