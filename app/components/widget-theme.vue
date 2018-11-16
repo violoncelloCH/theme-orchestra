@@ -13,12 +13,6 @@
             </div>
         </div>
         <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Disable content</label>
-            <div class="uk-form-controls">
-              <input class="uk-width-medium" v-model="widget.theme.content_disabled" type="checkbox">
-            </div>
-        </div>
-        <div class="uk-form-row">
             <label class="uk-form-label" for="form-h-it">Card style</label>
             <div class="uk-form-controls">
               <select class="uk-width-1-2" v-model="widget.theme.card_style">
@@ -38,18 +32,35 @@
               </select>
             </div>
         </div>
-        <div class="uk-form-row">
+        <div v-if="widget.position !== 'flyer' && widget.position !== 'flyerarchive' class="uk-form-row">
           <label class="uk-form-label" for="form-h-it">Widget background image</label>
           <div class="uk-form-controls">
             <input-image :source.sync="widget.theme.card_image"></input-image>
           </div>
         </div>
-        <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Image link</label>
+
+        <div v-if="widget.position == 'flyer' || widget.position =='flyerarchive'">
+          <hr>
+          <div class="uk-form-row">
+              <label class="uk-form-label" for="form-h-it">Disable Popup</label>
+              <div class="uk-form-controls">
+                <input class="uk-width-medium" v-model="widget.theme.content_disabled" type="checkbox">
+              </div>
+          </div>
+          <div class="uk-form-row">
+            <label class="uk-form-label" for="form-h-it">Flyer image</label>
             <div class="uk-form-controls">
-                <input class="uk-width-1-2" v-model="widget.theme.image_link" type="text">
+              <input-image :source.sync="widget.theme.flyer_image"></input-image>
             </div>
+          </div>
+          <div class="uk-form-row">
+              <label class="uk-form-label" for="form-h-it">Image link</label>
+              <div class="uk-form-controls">
+                  <input class="uk-width-1-2" v-model="widget.theme.flyer_link" type="text">
+              </div>
+          </div>
         </div>
+
       </div>
     </div>
 

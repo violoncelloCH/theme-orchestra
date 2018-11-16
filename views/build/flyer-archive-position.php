@@ -24,10 +24,10 @@
 <?php foreach ($widgets as $widget): ?>
   <div>
     <div class="uk-margin-medium uk-card uk-animation-slide-bottom <?= $widget->theme['card_style'] ?>">
-      <?php if ($widget->theme['card_image']): ?>
+      <?php if ($widget->theme['flyer_image']): ?>
         <div class="uk-card-media-top" <?php if (!$widget->theme['content_disabled']): ?>uk-tooltip="DETAILS"<?php endif; ?>>
-          <?php if (!$widget->theme['content_disabled']): ?><a href="<?= $widget->theme['image_link'] ?>" uk-toggle><?php endif; ?>
-            <img data-src="<?= $widget->theme['card_image'] ?>" data-width="1240" data-heigth="1754" uk-img>
+          <?php if (!$widget->theme['content_disabled']): ?><a href="<?= $widget->theme['flyer_link'] ?>" uk-toggle><?php endif; ?>
+            <img data-src="<?= $widget->theme['flyer_image'] ?>" data-width="1240" data-heigth="1754" uk-img>
           <?php if (!$widget->theme['content_disabled']): ?></a><?php endif; ?>
         </div>
       <?php endif; ?>
