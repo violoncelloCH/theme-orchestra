@@ -34,30 +34,32 @@
               <input class="uk-width-medium" v-model="widget.theme.title_hide" type="checkbox">
             </div>
         </div>
-        <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Card style</label>
+        <div v-if="widget.position !== 'flyer' && widget.position !== 'flyerarchive'">
+          <div class="uk-form-row">
+              <label class="uk-form-label" for="form-h-it">Card style</label>
+              <div class="uk-form-controls">
+                <select class="uk-width-1-2" v-model="widget.theme.card_style">
+                  <option value="">no card (style)</option>
+                  <option value="uk-card-default">default card style</option>
+                  <option value="uk-card-primary">primary card style</option>
+                  <option value="uk-card-secondary">secondary card style</option>
+                </select>
+              </div>
+          </div>
+          <div v-if="widget.theme.card_style !== ''" class="uk-form-row">
+              <label class="uk-form-label" for="form-h-it">Card padding</label>
+              <div class="uk-form-controls">
+                <select class="uk-width-1-2" v-model="widget.theme.card_padding">
+                  <option value="">no padding</option>
+                  <option value="uk-card-body">normal body padding</option>
+                </select>
+              </div>
+          </div>
+          <div class="uk-form-row">
+            <label class="uk-form-label" for="form-h-it">Widget background image</label>
             <div class="uk-form-controls">
-              <select class="uk-width-1-2" v-model="widget.theme.card_style">
-                <option value="">no card (style)</option>
-                <option value="uk-card-default">default card style</option>
-                <option value="uk-card-primary">primary card style</option>
-                <option value="uk-card-secondary">secondary card style</option>
-              </select>
+              <input-image :source.sync="widget.theme.card_image"></input-image>
             </div>
-        </div>
-        <div v-if="widget.theme.card_style !== ''" class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Card padding</label>
-            <div class="uk-form-controls">
-              <select class="uk-width-1-2" v-model="widget.theme.card_padding">
-                <option value="">no padding</option>
-                <option value="uk-card-body">normal body padding</option>
-              </select>
-            </div>
-        </div>
-        <div v-if="widget.position !== 'flyer' && widget.position !== 'flyerarchive'" class="uk-form-row">
-          <label class="uk-form-label" for="form-h-it">Widget background image</label>
-          <div class="uk-form-controls">
-            <input-image :source.sync="widget.theme.card_image"></input-image>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@
 
 <?php foreach ($widgets as $widget): ?>
   <div>
-    <div class="uk-card uk-animation-slide-bottom <?= $widget->theme['card_style'] ?>">
+    <div class="uk-card uk-animation-slide-bottom uk-card-default">
       <?php if ($widget->theme['flyer_image']): ?>
         <div class="uk-card-media-top" <?php if (!$widget->theme['content_disabled']): ?>uk-tooltip="DETAILS"<?php endif; ?>>
           <?php if (!$widget->theme['content_disabled']): ?><a href="#flyer<?= $widget->id ?>" uk-toggle><?php endif; ?>
@@ -33,7 +33,7 @@
       <?php endif; ?>
 
       <?php if (!$widget->theme['flyer_image']): ?>
-        <div class="<?= $widget->theme['card_padding'] ?>">
+        <div class="<?php if ($widget->theme['card_padding']): ?>uk-card-body<?php endif; ?>">
           <?php if ($widget->theme['title_hide'] == false): ?>
             <h3 class="pas-widget-title uk-heading-line uk-margin-small">
               <span><?= $widget->title ?></span>
