@@ -48,9 +48,11 @@
       <div id="flyer<?= $widget->id ?>" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-margin-auto-vertical">
           <button class="uk-modal-close-default" type="button" uk-close></button>
-          <div class="uk-modal-header">
-            <h3><?= $widget->title ?></h3>
-          </div>
+          <?php if ($widget->theme['title_hide'] == false): ?>
+            <div class="uk-modal-header">
+              <h3><?= $widget->title ?></h3>
+            </div>
+          <?php endif; ?>
           <div class="uk-modal-body" uk-overflow-auto>
             <?= $widget->get('result') ?>
           </div>
