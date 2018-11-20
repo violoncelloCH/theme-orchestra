@@ -12,23 +12,19 @@
               <input-image :source.sync="widget.theme.flyer_image"></input-image>
             </div>
           </div>
-          <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Popup content</label>
-            <div class="uk-form-controls">
-              <v-editor :value.sync="widget.theme.popup" :options="{markdown : false}"></v-editor>
-            </div>
-          </div>
-          <div class="uk-form-row">
-            <label class="uk-form-label" for="form-h-it">Link to Flyer or PDF</label>
-            <div class="uk-form-controls">
-              <input-link class="uk-width-1-2" :link.sync="widget.theme.flyer_link"></input-link>
-            </div>
-          </div>
-          <div class="uk-form-row">
-              <label class="uk-form-label" for="form-h-it">Disable Popup</label>
+          <div v-if="widget.theme.flyer_image">
+            <div class="uk-form-row">
+              <label class="uk-form-label" for="form-h-it">Link to Flyer or PDF</label>
               <div class="uk-form-controls">
-                <input class="uk-width-medium" v-model="widget.theme.content_disabled" type="checkbox">
+                <input-link class="uk-width-1-2" :link.sync="widget.theme.flyer_link"></input-link>
               </div>
+            </div>
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="form-h-it">Disable Popup</label>
+                <div class="uk-form-controls">
+                  <input class="uk-width-medium" v-model="widget.theme.content_disabled" type="checkbox">
+                </div>
+            </div>
           </div>
           <hr>
         </div>
