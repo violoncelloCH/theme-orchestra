@@ -35,7 +35,7 @@
             </div>
         </div>
         <div v-if="widget.position !== 'flyer' && widget.position !== 'flyerarchive'">
-          <div class="uk-form-row">
+          <div v-if="widget.position !== 'titleimage'" class="uk-form-row">
               <label class="uk-form-label" for="form-h-it">Card style</label>
               <div class="uk-form-controls">
                 <select class="uk-width-1-2" v-model="widget.theme.card_style">
@@ -46,7 +46,7 @@
                 </select>
               </div>
           </div>
-          <div v-if="widget.theme.card_style !== ''" class="uk-form-row">
+          <div v-if="widget.position !== 'titleimage' && widget.theme.card_style !== ''" class="uk-form-row">
               <label class="uk-form-label" for="form-h-it">Card padding</label>
               <div class="uk-form-controls">
                 <select class="uk-width-1-2" v-model="widget.theme.card_padding">
