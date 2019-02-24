@@ -158,6 +158,52 @@
 
           <aside class="uk-width-expand@m ">
             <?= $view->render('content') ?>
+
+            <?php if ($params['page_type'] === 'about'): ?>
+
+              <!-- about-images -->
+              <?php if ($params['about_images'] === true): ?>
+                <hr id="fotos" class="uk-margin-remove-bottom uk-margin-large-top">
+                <hr class="uk-margin-remove-bottom vio-margin-music">
+                <hr class="uk-margin-remove-bottom vio-margin-music">
+                <hr class="uk-margin-remove-bottom vio-margin-music">
+                <hr class="uk-margin-large-bottom vio-margin-music">
+
+                <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-collapse" uk-grid="masonry: true">
+                  <?php
+                    $images = ['testimage.jpg', 'test2image.jpg'];
+                  ?>
+                  <?php foreach ($images as $image): ?>
+                    <img data-src="<?= $params['image_folder'] ?>/<?= $image ?>" alt="<?= $image ?>" uk-img="" width="600" height="308">
+                  <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
+
+              <!-- about-videos -->
+              <?php if ($params['about_videos'] === true): ?>
+                <hr id="videos" class="uk-margin-remove-bottom uk-margin-large-top">
+                <hr class="uk-margin-remove-bottom vio-margin-music">
+                <hr class="uk-margin-remove-bottom vio-margin-music">
+                <hr class="uk-margin-remove-bottom vio-margin-music">
+                <hr class="uk-margin-large-bottom vio-margin-music">
+
+                <div uk-slideshow="animation:push">
+                <div class="uk-position-relative uk-visible-toggle uk-dark">
+                    <ul class="uk-slideshow-items">
+                      <?php foreach ($videos as $video): ?>
+                        <li>
+                            <iframe src="<?= $video ?>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </li>
+                      <?php endforeach; ?>
+                    </ul>
+                    <a class="uk-position-center-left-out uk-position-small uk-slidenav-large" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right-out uk-position-small uk-slidenav-large" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                </div>
+                <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+                </div>
+              <?php endif; ?>
+
+            <?php endif; ?>
           </aside>
 
 

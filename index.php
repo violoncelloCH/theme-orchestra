@@ -47,6 +47,10 @@ return [
       'remove_margin' => false,
       'page_image'    => '',
       'page_type'     => '',
+      'about_image'   => false,
+      'image_folder'  => 'storage',
+      'about_video'   => false,
+      'about_videos'  => '',
     ],
 
     'config' => [

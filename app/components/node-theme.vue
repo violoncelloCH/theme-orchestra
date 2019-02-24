@@ -17,6 +17,37 @@
               </select>
             </div>
         </div>
+        <div v-if="node.theme.page_type === 'about'">
+          <hr>
+          <div class="uk-form-row">
+              <label class="uk-form-label" for="form-h-it">Show about images</label>
+              <div class="uk-form-controls">
+                <input class="uk-width-medium" v-model="node.theme.about_images" type="checkbox">
+              </div>
+          </div>
+          <div v-if="node.theme.about_images" class="uk-form-row">
+            <label class="uk-form-label" for="form-h-it">Folder with images</label>
+            <div class="uk-form-controls">
+              <input-link class="uk-width-1-2" :link.sync="node.theme.image_folder"></input-link>
+            </div>
+          </div>
+
+          <div class="uk-form-row">
+              <label class="uk-form-label" for="form-h-it">Show about videos</label>
+              <div class="uk-form-controls">
+                <input class="uk-width-medium" v-model="node.theme.about_videos" type="checkbox">
+              </div>
+          </div>
+          <div v-if="node.theme.about_videos" class="uk-form-row">
+            <label class="uk-form-label" for="form-h-it">Link(s?)</label>
+            <div class="uk-form-controls">
+              <input-link class="uk-width-1-2" :link.sync="node.theme.about_video"></input-link>
+            </div>
+          </div> <!-- TODO: dynamically add new empty input fields ? -->
+
+
+          <hr>
+        </div>
         <div class="uk-form-row">
             <label class="uk-form-label" for="form-h-it">Hide site title</label>
             <div class="uk-form-controls">
