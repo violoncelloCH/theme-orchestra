@@ -78,10 +78,9 @@
       </div>
 
 
-      <?php if ($view->position()->exists('titleimage') || $view->position()->exists('title') || $view->position()->exists('flyer')): ?>
+      <?php if ($params['page_type'] === 'home' && ($view->position()->exists('titleimage') || $view->position()->exists('title') || $view->position()->exists('flyer'))): ?>
         <div class="uk-container uk-container-expand">
         <div class="uk-grid-match uk-margin-top uk-margin-bottom uk-child-width-1-2@m" uk-grid uk-height-viewport="offset-top: true; offset-bottom: 100px">
-      <?php endif; ?>
 
           <?php if ($view->position()->exists('titleimage')): ?>
             <div>
@@ -105,7 +104,6 @@
             </div>
           <?php endif; ?>
 
-        <?php if ($view->position()->exists('titleimage') || $view->position()->exists('title') || $view->position()->exists('flyer')): ?>
           </div>
         </div>
         <?php endif; ?>
@@ -179,7 +177,7 @@
         <?php endif; ?>
 
         <!-- Flyer-Archiv -->
-        <?php if ($view->position()->exists('flyerarchive')): ?>
+        <?php if ($params['page_type'] === 'archive' && $view->position()->exists('flyerarchive')): ?>
           <div class="uk-container uk-container-expand">
             <div class="uk-flex-bottom uk-margin-top uk-margin-bottom uk-child-width-1-4@m" uk-grid>
                 <?= $view->position('flyerarchive' , 'build/flyer-position.php') ?>

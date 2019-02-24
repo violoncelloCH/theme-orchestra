@@ -7,6 +7,17 @@
     <div class="uk-block uk-block-muted" style="border:1px solid #ede7e7; padding: 10px;">
       <div class="uk-form uk-form-horizontal">
         <div class="uk-form-row">
+            <label class="uk-form-label" for="form-h-it">Page type</label>
+            <div class="uk-form-controls">
+              <select class="uk-width-1-2" v-model="node.theme.page_type">
+                <option value="">Default</option>
+                <option value="home">Home</option>
+                <option value="archive">Archive</option>
+                <option value="about">About</option>
+              </select>
+            </div>
+        </div>
+        <div class="uk-form-row">
             <label class="uk-form-label" for="form-h-it">Hide site title</label>
             <div class="uk-form-controls">
               <input class="uk-width-medium" v-model="node.theme.title_hide" type="checkbox">

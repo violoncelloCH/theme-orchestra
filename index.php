@@ -46,6 +46,7 @@ return [
       'title_hide'    => false,
       'remove_margin' => false,
       'page_image'    => '',
+      'page_type'     => '',
     ],
 
     'config' => [
