@@ -190,6 +190,9 @@
                 <div uk-slideshow="animation:push">
                 <div class="uk-position-relative uk-visible-toggle uk-dark">
                     <ul class="uk-slideshow-items">
+                      <?php
+                        $videos = $params['about_video_links'];
+                      ?>
                       <?php foreach ($videos as $video): ?>
                         <li>
                             <iframe src="<?= $video ?>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

@@ -41,10 +41,13 @@
           </div>
           <div v-if="node.theme.about_videos" class="uk-form-row">
             <label class="uk-form-label" for="form-h-it">Link(s?)</label>
-            <div class="uk-form-controls">
-              <input-link class="uk-width-1-2" :link.sync="node.theme.about_video"></input-link>
+            <div v-for="(key, video_link) in node.theme.about_video_links" class="uk-form-controls">
+              <input-link class="uk-width-1-2" :link.sync="node.theme.about_video_links[key]"></input-link>
             </div>
-          </div> <!-- TODO: dynamically add new empty input fields ? -->
+            <div class="uk-form-controls">
+              <input-link id="new" class="uk-width-1-2" :link.sync="node.theme.about_video_links[node.theme.about_video_links.length]"></input-link>
+            </div>
+          </div>
 
 
           <hr>
