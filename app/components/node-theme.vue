@@ -29,6 +29,7 @@
             <label class="uk-form-label" for="form-h-it">Folder with images</label>
             <div class="uk-form-controls">
               <input-link class="uk-width-1-2" :link.sync="node.theme.image_folder"></input-link>
+              <p>Make sure to select a folder and not a file or URL here.<br>The folder should only contain the images you want to see on the about page (no other files/subfolders). The images are ordered alphabetically by name.</p>
             </div>
           </div>
 

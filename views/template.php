@@ -171,10 +171,10 @@
 
                 <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-collapse" uk-grid="masonry: true">
                   <?php
-                    $images = ['testimage.jpg', 'test2image.jpg'];
+                    $images = array_diff(scandir($params['image_folder']), array('.', '..'));
                   ?>
                   <?php foreach ($images as $image): ?>
-                    <img data-src="<?= $params['image_folder'] ?>/<?= $image ?>" alt="<?= $image ?>" uk-img="" width="600" height="308">
+                    <img data-src="<?= $params['image_folder'] ?>/<?= $image ?>" alt="<?= $image ?>" uk-img="">
                   <?php endforeach; ?>
                 </div>
               <?php endif; ?>
