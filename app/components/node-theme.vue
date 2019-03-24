@@ -41,11 +41,13 @@
           </div>
           <div v-if="node.theme.about_videos" class="uk-form-row">
             <label class="uk-form-label" for="form-h-it">Link(s?)</label>
-            <div v-for="(key, video_link) in node.theme.about_video_links" class="uk-form-controls">
-              <input-link class="uk-width-1-2" :link.sync="node.theme.about_video_links[key]"></input-link>
+            <div v-for="(key, video_link) in about_video_links" class="uk-form-controls uk-margin-bottom uk-flex">
+              <a href="" class="uk-icon-hover uk-icon-button uk-icon-trash uk-margin-right" @click.prevent="deleteLink(key)"></a>
+              <input-link class="uk-width-1-2" :link.sync="about_video_links[key]"></input-link>
             </div>
-            <div class="uk-form-controls">
-              <input-link id="new" class="uk-width-1-2" :link.sync="node.theme.about_video_links[node.theme.about_video_links.length]"></input-link>
+            <div class="uk-form-controls uk-flex">
+              <a class="uk-icon-button uk-icon-plus uk-margin-right" @click.prevent="addLink"></a>
+              <input-link id="new" class="uk-width-1-2" :link.sync="newLink"></input-link>
             </div>
           </div>
 
@@ -84,7 +86,27 @@
             priority: 90
         },
 
-        props: ['node']
+        props: ['node'],
+
+        data: function() {
+          return {
+            about_video_links: this.node.theme.about_video_links,
+            newLink: '',
+          }
+        },
+
+        methods: {
+          deleteLink: function (key) {
+            this.node.theme.about_video_links.splice(key, 1)
+          },
+          addLink: function () {
+            this.about_video_links.push(this.newLink);
+            this.newLink = '';
+          }
+
+        }
+
+
 
     };
 
