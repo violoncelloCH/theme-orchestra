@@ -41,9 +41,9 @@
           </div>
           <div v-if="node.theme.about_videos" class="uk-form-row">
             <label class="uk-form-label" for="form-h-it">Video links</label>
-            <div v-for="(key, video_link) in about_video_links" class="uk-form-controls uk-margin-bottom uk-flex">
+            <div v-for="(key, video_link) in node.theme.about_video_links" class="uk-form-controls uk-margin-bottom uk-flex">
               <a href="" class="uk-icon-hover uk-icon-button uk-icon-trash uk-margin-right" @click.prevent="deleteLink(key)"></a>
-              <input-link class="uk-width-1-2" :link.sync="about_video_links[key]"></input-link>
+              <input-link class="uk-width-1-2" :link.sync="node.theme.about_video_links[key]"></input-link>
             </div>
             <div class="uk-form-controls">
               <div class="uk-flex">
@@ -93,17 +93,16 @@
 
         data: function() {
           return {
-            about_video_links: this.node.theme.about_video_links,
             newLink: '',
           }
         },
 
         methods: {
           deleteLink: function (key) {
-            this.node.theme.about_video_links.splice(key, 1)
+            this.node.theme.about_video_links.splice(key, 1);
           },
           addLink: function () {
-            this.about_video_links.push(this.newLink);
+            this.node.theme.about_video_links.push(this.newLink);
             this.newLink = '';
           }
 
