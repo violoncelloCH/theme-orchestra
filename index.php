@@ -38,7 +38,6 @@ return [
      * can assign menus to these positions.
      */
     'menus' => [
-
         'main' => 'Main',
     ],
 
