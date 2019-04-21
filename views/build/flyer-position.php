@@ -56,9 +56,11 @@
           <div class="uk-modal-body" uk-overflow-auto>
             <?= $widget->get('result') ?>
           </div>
+          <?php if ($widget->theme['flyer_link']): ?>
           <div class="uk-modal-footer">
             <a class="uk-button uk-button-default" href="<?= $widget->theme['flyer_link'] ?>" target="_blank">Flyer als PDF</a>
           </div>
+        <?php endif; ?>
         </div>
       </div>
     <?php endif; ?>
