@@ -23,22 +23,47 @@
 
 <?php foreach ($widgets as $widget): ?>
   <div>
-    <div class="uk-margin-medium uk-card uk-animation-slide-bottom <?= $widget->theme['card_style'] ?>">
-      <?php if ($widget->theme['card_image']): ?>
-        <div class="uk-card-media-top" uk-tooltip="DETAILS">
-          <a href="<?= $widget->theme['image_link'] ?>" uk-toggle>
-            <img data-src="<?= $widget->theme['card_image'] ?>" data-width="1240" data-heigth="1754" uk-img>
-          </a>
+    <div class="uk-card uk-animation-slide-bottom uk-card-default">
+      <?php if ($widget->theme['flyer_image']): ?>
+        <div class="uk-card-media-top" <?php if (!$widget->theme['content_disabled']): ?>uk-tooltip="DETAILS"<?php endif; ?>>
+          <?php if (!$widget->theme['content_disabled']): ?><a href="#flyer<?= $widget->id ?>" uk-toggle><?php endif; ?>
+            <img data-src="<?= $widget->theme['flyer_image'] ?>" data-width="1240" data-heigth="1754" uk-img>
+          <?php if (!$widget->theme['content_disabled']): ?></a><?php endif; ?>
         </div>
       <?php endif; ?>
-      <div class="<?= $widget->theme['card_padding'] ?>">
-        <?php if ($widget->theme['title_hide'] == false): ?>
-          <h3 class="pas-widget-title uk-heading-line uk-margin-small">
-            <span><?= $widget->title ?></span>
-          </h3>
+
+      <?php if (!$widget->theme['flyer_image']): ?>
+        <div class="<?php if ($widget->theme['card_padding']): ?>uk-card-body<?php endif; ?>">
+          <?php if ($widget->theme['title_hide'] == false): ?>
+            <h3 class="pas-widget-title uk-heading-line uk-margin-small">
+              <span><?= $widget->title ?></span>
+            </h3>
+          <?php endif; ?>
+          <?= $widget->get('result') ?>
+        </div>
+      <?php endif; ?>
+    </div>
+
+    <?php if ($widget->theme['flyer_image'] && !$widget->theme['content_disabled']): ?>
+      <div id="flyer<?= $widget->id ?>" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-margin-auto-vertical">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <?php if ($widget->theme['title_hide'] == false): ?>
+            <div class="uk-modal-header">
+              <h3><?= $widget->title ?></h3>
+            </div>
+          <?php endif; ?>
+          <div class="uk-modal-body" uk-overflow-auto>
+            <?= $widget->get('result') ?>
+          </div>
+          <?php if ($widget->theme['flyer_link']): ?>
+          <div class="uk-modal-footer">
+            <a class="uk-button uk-button-default" href="<?= $widget->theme['flyer_link'] ?>" target="_blank">Flyer als PDF</a>
+          </div>
         <?php endif; ?>
-        <?= $widget->get('result') ?>
         </div>
       </div>
-    </div>
+    <?php endif; ?>
+
+  </div>
 <?php endforeach; ?>

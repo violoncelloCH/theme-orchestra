@@ -46,6 +46,11 @@ return [
       'title_hide'    => false,
       'remove_margin' => false,
       'page_image'    => '',
+      'page_type'     => '',
+      'about_image'   => false,
+      'image_folder'  => '',
+      'about_video'   => false,
+      'about_video_links'  => [],
     ],
 
     'config' => [
@@ -60,12 +65,13 @@ return [
 
 
     'widget' => [
+      'flyer_image'   => '',
+      'flyer_link'    => '',
       'title_hide'    => false,
       'content_disabled' => false,
       'card_style'    => '',
       'card_padding'  => 'uk-card-body',
       'card_image'    => '',
-      'image_link'    => '',
 
     ],
 
